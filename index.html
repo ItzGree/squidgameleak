@@ -1,189 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VeloxOS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Preview</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d0d0d;
-      color: #ffffff;
-    }
-    header {
-      position: relative;
-      background: linear-gradient(135deg, #004080, #0066cc);
-      padding: 100px 20px 100px 20px;
-      text-align: center;
-    }
-    header img {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      height: 100px;
-      width: auto;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto 2em;
-    }
-    .btn {
-      padding: 15px 30px;
-      background-color: #0055aa;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 8px;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-    .btn:hover {
-      background-color: #003f7d;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .feature {
-      background-color: #1c1c1c;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 300px;
-    }
-
-    /* Sezione anteprime */
-    .previews {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding-bottom: 60px;
-    }
-    .preview {
-      background-color: #1c1c1c;
-      border-radius: 12px;
-      padding: 15px;
-      max-width: 400px;
-      box-shadow: 0 0 15px rgba(0, 102, 204, 0.5);
-    }
-    .preview img {
-      max-width: 100%;
-      border-radius: 10px;
-      display: block;
-      margin-bottom: 12px;
-      height: auto;
-      width: 100%;
-    }
-    .preview h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.3em;
-      color: #66b3ff;
-    }
-    .preview p {
-      font-size: 1em;
-      color: #ccc;
-      margin: 0;
-    }
-
-    /* Gioco più grande */
-    .preview.gameplay {
-      max-width: 450px;
-    }
-
-    footer {
+      font-family: Arial, sans-serif;
       background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 40px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #aaa;
     }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      header img {
-        position: static;
-        display: block;
-        margin: 0 auto 20px auto;
-        height: 70px;
-      }
-      .previews {
-        flex-direction: column;
-        gap: 30px;
-        padding-bottom: 40px;
-      }
-      .preview {
-        max-width: 90%;
-        margin: 0 auto;
-      }
+    video {
+      width: 80%;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .file-info {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 6px;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    .file-info h2 {
+      margin-top: 0;
+    }
+    .file-info a {
+      color: #00f0ff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <img src="https://i.imgur.com/dcKrCOi.png" alt="Logo VeloxOS" />
-    <h1>VeloxOS</h1>
-    <p>Il tuo Windows ottimizzato per prestazioni, privacy e leggerezza.</p>
-    <a href="https://raw.githubusercontent.com/ItzGree/veloxos/main/veloxos.zip" download class="btn">Scarica ora VeloxOS</a>
-  </header>
-
-  <section>
-    <h2>Funzionalità</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Sistema operativo in BETA!</h3>
-        <p>VeloxOS sta avendo aggiornamenti continui per avere migliori prestazioni.</p>
-      </div>
-      <div class="feature">
-        <h3>Privacy Garantita</h3>
-        <p>Telemetria e pubblicità disattivate.</p>
-      </div>
-      <div class="feature">
-        <h3>Facile da Usare</h3>
-        <p>Basta un clic per applicare tutte le ottimizzazioni.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Anteprime VeloxOS</h2>
-    <div class="previews">
-      <div class="preview">
-        <img src="https://i.imgur.com/HUIZtk0.png" alt="Desktop VeloxOS" />
-        <h3>Desktop</h3>
-        <p>Un’interfaccia pulita, moderna e veloce.</p>
-      </div>
-      <div class="preview">
-        <img src="https://i.imgur.com/Enw2ak8.png" alt="Contenuto Cartella VeloxOS" />
-        <h3>Contenuto Cartella</h3>
-        <p>Gestione file semplice e immediata.</p>
-      </div>
-      <div class="preview gameplay">
-        <img src="https://i.imgur.com/FQOyuPo.png" alt="Gameplay VeloxOS" />
-        <h3>Gaming</h3>
-        <p>Prestazioni ottimizzate per i tuoi giochi preferiti.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 VeloxOS. Progetto indipendente.
-  </footer>
-
+  <h1>Video Leak Preview</h1>
+  <video controls>
+    <source src="sample.mp4" type="video/mp4">
+    Il tuo browser non supporta il tag video.
+  </video>
+  <div class="file-info">
+    <h2>File: NetflixFinalProxy_2373386_81721327_Squid_Game_Season_3_Episode_2_2025-03-11.mp4</h2>
+    <p>Versione: demo</p>
+    <p>Data: 2025-06-16</p>
+    <p><a href="sample.mp4" download>Scarica il file</a></p>
+  </div>
 </body>
 </html>
+
