@@ -1,2 +1,1 @@
-# veloxos
-Sistema ottimizzato per Windows
+# squid game leak
